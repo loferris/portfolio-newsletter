@@ -1,5 +1,5 @@
 {
-  "name": "portfolionewsletter",
+  "name": "content",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -25,9 +25,5 @@
     "react": "^17.0",
     "react-dom": "^17.0"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:loferris/portfolio-newsletter.git"
-  }
+  "devDependencies": {}
 }
