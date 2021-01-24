@@ -3,7 +3,7 @@ import groq from "groq";
 import client from "../../client";
 import PostHeader from "../../components/PostHeader";
 import PostBody from "../../components/PostBody";
-import HeroImage from "../../components/HeroImage";
+import PostHeroImage from "../../components/PostHeroImage";
 import Link from "next/link";
 
 const Post = (props) => {
@@ -21,7 +21,7 @@ const Post = (props) => {
       <br></br>
       <Link href="/blog">blog</Link>
       <article>
-        <HeroImage heroImage={mainImage} />
+        <PostHeroImage heroImage={mainImage} />
         <PostHeader
           title={title}
           name={name}
