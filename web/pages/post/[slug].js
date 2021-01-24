@@ -1,12 +1,9 @@
 // [slug].js
 import groq from "groq";
-import imageUrlBuilder from "@sanity/image-url";
-import BlockContent from "@sanity/block-content-to-react";
 import client from "../../client";
-
-function urlFor(source) {
-  return imageUrlBuilder(client).image(source);
-}
+import PostHeader from "../../components/PostHeader";
+import PostBody from "../../components/PostBody";
+import Link from "next/link";
 
 const Post = (props) => {
   const {
@@ -17,28 +14,18 @@ const Post = (props) => {
     body = [],
   } = props;
   return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {authorImage && (
-        <div>
-          <img src={urlFor(authorImage).width(50).url()} />
-        </div>
-      )}
-      <BlockContent
-        blocks={body}
-        imageOptions={{ w: 320, h: 240, fit: "max" }}
-        {...client.config()}
-      />
-    </article>
+    <div>
+      <Link href="http://localhost:3000">home</Link>
+      <article>
+        <PostHeader
+          title={title}
+          name={name}
+          categories={categories}
+          authorImage={authorImage}
+        />
+        <PostBody body={body} />
+      </article>
+    </div>
   );
 };
 
@@ -51,7 +38,6 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 }`;
 
 Post.getInitialProps = async function (context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.query;
   return await client.fetch(query, { slug });
 };
