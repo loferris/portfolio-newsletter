@@ -1,8 +1,8 @@
 // client.js
-import sanityClient from '@sanity/client'
+import sanityClient from "@sanity/client";
 
 export default sanityClient({
   projectId: process.env.projectId,
-  dataset: 'production',
-  useCdn: true
-})
+  dataset: "production",
+  useCdn: true,
+});
