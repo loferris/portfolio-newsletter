@@ -26,7 +26,7 @@ const Postheader = (props) => {
             <Img src={urlFor(authorImage).width(50).url()}></Img>
           </Col>
           <Col size={1}>By {name}</Col>
-          <Col size={1}>
+          <Col size={2}>
             {categories && (
               <ul>
                 Posted in

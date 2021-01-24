@@ -3,6 +3,7 @@ import groq from "groq";
 import client from "../../client";
 import PostHeader from "../../components/PostHeader";
 import PostBody from "../../components/PostBody";
+import HeroImage from "../../components/HeroImage";
 import Link from "next/link";
 
 const Post = (props) => {
@@ -12,11 +13,15 @@ const Post = (props) => {
     categories,
     authorImage,
     body = [],
+    mainImage,
   } = props;
   return (
     <div>
-      <Link href="http://localhost:3000">home</Link>
+      <Link href="/">home</Link>
+      <br></br>
+      <Link href="/blog">blog</Link>
       <article>
+        <HeroImage heroImage={mainImage} />
         <PostHeader
           title={title}
           name={name}
@@ -34,7 +39,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
-  body
+  body,
+  mainImage
 }`;
 
 Post.getInitialProps = async function (context) {

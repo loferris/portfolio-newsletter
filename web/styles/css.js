@@ -5,7 +5,7 @@ export const Grid = styled.div``;
 export const Row = styled.div`
   clear: both;
   display: flex;
-  max-width: 1040px;
+  max-width: 1024px;
   margin: 0 auto;
 `;
 
