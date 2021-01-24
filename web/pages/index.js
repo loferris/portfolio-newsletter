@@ -3,16 +3,13 @@ import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import { styled } from "linaria/react";
-
-const H1 = styled.h1`
-  color: red;
-`;
+import ResponsiveGrid from "../components/ResponsiveGrid";
 
 const Index = (props) => {
   const { posts = [] } = props;
   return (
     <div>
-      <H1>Welcome to a blog!</H1>
+      <h1>Welcome to a blog!</h1>
       {posts.map(
         ({ _id, title = "", slug = "", _updatedAt = "" }) =>
           slug && (
@@ -27,6 +24,7 @@ const Index = (props) => {
             </li>
           )
       )}
+      <ResponsiveGrid />
     </div>
   );
 };
