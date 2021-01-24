@@ -1,3 +1,6 @@
 *node_modules
 sanity.json
 *.DS_Store
+.env.local
+.next
+next.config.js
