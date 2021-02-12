@@ -3,8 +3,10 @@ import { Grid, Row, Col } from "../styles/css";
 const ResponsiveGrid = () => {
   return (
     <div className="grid-demo">
-      <h1>A Responsive Grid</h1>
       <Grid>
+        <Row>
+          <Col size={1}><h1>A Responsive Grid</h1></Col>
+        </Row>
         <Row>
           <Col size={1}>Longboi</Col>
         </Row>

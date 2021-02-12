@@ -1,13 +1,14 @@
-import ResponsiveGrid from "../components/ResponsiveGrid";
 import Link from "next/link";
+import Image from "next/image";
 
 const Index = (props) => {
   const { posts = [] } = props;
   return (
-    <div>
-      <Link href="/blog">Blog</Link>
-      <ResponsiveGrid />
-    </div>
+    <>
+    <Image src={"/portfolioHero.png"} layout={"fill"} objectFit={"cover"}
+     />
+    <Link href="/blog">Blog</Link>
+    </>
   );
 };
 

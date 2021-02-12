@@ -21,8 +21,7 @@ export const Img = styled.img`
 `;
 
 export const PostHeroImg = styled.img`
-  width: 100%;
-  height: 100%;
+  height: 50%;
   clear: both;
 
   background-position: center;
@@ -38,6 +37,6 @@ export const H2 = styled.h2``;
 
 export const H3 = styled.h3``;
 
-export const Body = styled.p``;
+export const BodyText = styled.p``;
 
 export const Code = styled.p``;

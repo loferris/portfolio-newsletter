@@ -4,3 +4,5 @@ sanity.json
 .env.local
 .next
 next.config.js
+.linaria-cache/
+public/

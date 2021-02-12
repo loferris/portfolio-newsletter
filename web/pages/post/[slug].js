@@ -5,6 +5,7 @@ import PostHeader from "../../components/PostHeader";
 import PostBody from "../../components/PostBody";
 import PostHeroImage from "../../components/PostHeroImage";
 import Link from "next/link";
+import { Body } from "../../styles/css"
 
 const Post = (props) => {
   const {
@@ -16,7 +17,7 @@ const Post = (props) => {
     mainImage,
   } = props;
   return (
-    <div>
+    <Body>
       <Link href="/">home</Link>
       <br></br>
       <Link href="/blog">blog</Link>
@@ -30,7 +31,7 @@ const Post = (props) => {
         />
         <PostBody body={body} />
       </article>
-    </div>
+    </Body>
   );
 };
 
